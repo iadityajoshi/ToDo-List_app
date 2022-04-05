@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import logo from "./logo.svg";
+import "./App.css";
+import TextForm from "./Components/TextForm";
+import {v4 as uuidv4} from 'uuid'
+import ToDoList from './Components/ToDoList';
+import Header from './Components/Header';
+
 
 function App() {
+  const [list, setList] = useState([]);
+  const dataHandler = (input) => {
+    // console.log(list);
+    // console.log(input);
+    setList([...list, {title: input, id: uuidv4()} ]);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div><Header/></div>
+      <TextForm query={dataHandler} />
+      <div className='container'>
+        <ToDoList data = {list} />
+      </div>
     </div>
   );
 }

@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(255, 212, 148);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app{
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 2px solid rgb(17, 12, 29);
+  border-radius: 10px;
+  height: 500px;
+  width: 400px;
+  background-color: rgb(21, 65, 71);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.inputForm{
+  height: 40px;
+  width: 230px;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding-left: 8px;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button{
+  height: 40px;
+  width: 60px;
+  margin-left: 10px;
+  border-radius: 8px;
+  background-color: rgb(255, 202, 123);
+}
+
+.container{
+  align-self: flex-start;
+  margin-left: 60px;
+  margin-top: 10px;
+}
+
+h1{
+  margin-top: 15px;
+  font-family: 'Beau Rivage', cursive; ;
 }
