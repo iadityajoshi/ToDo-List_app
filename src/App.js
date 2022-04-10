@@ -1,25 +1,29 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import "./App.css";
 import TextForm from "./Components/TextForm";
-import {v4 as uuidv4} from 'uuid'
-import ToDoList from './Components/ToDoList';
-import Header from './Components/Header';
-
+import { v4 as uuidv4 } from "uuid";
+import ToDoList from "./Components/ToDoList";
+import Header from "./Components/Header";
 
 function App() {
   const [list, setList] = useState([]);
   const dataHandler = (input) => {
     // console.log(list);
     // console.log(input);
-    setList([...list, {title: input, id: uuidv4()} ]);
-  }
+    setList([...list, { title: input, id: uuidv4() }]);
+  };
+  const deleteHandler = (input) => {
+    setList(list.filter((item) => item.id !== input));
+  };
 
   return (
     <div className="app">
-      <div><Header/></div>
+      <div>
+        <Header />
+      </div>
       <TextForm query={dataHandler} />
-      <div className='container'>
-        <ToDoList data = {list} />
+      <div className="container">
+        <ToDoList clickHandler={deleteHandler} data={list} />
       </div>
     </div>
   );
