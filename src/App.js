@@ -18,7 +18,10 @@ function App() {
   };
 
   const modalSaveHandler = (inputID, inputTitle) => {
+    //idx is index of li element on which edit button was clicked
     const idx = list.findIndex( item => item.id===inputID);
+
+    //using splice method to reach upto that index(idx),delete that element and replace it with edited text
     return list.splice(idx, 1, {title: inputTitle, id:inputID});
   };
 

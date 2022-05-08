@@ -4,15 +4,21 @@ import './modalStyles.css';
 
 const Modal = ({modalContent, showStatus, modalClose, id, modalSaveHandler}) => {
     // const initialText = modalContent;
+    
+    // if i use modalContent prop as initial state, i'm getting value of editText as 'undefined' 
     // const [editText, setEditText] = useState(modalContent);
+    
     const [editText, setEditText] = useState('task value');
     // console.log(editText);
     
+    //passed down modalSaveHandler function as prop from App.js
+    //But react gives this error when i click save button:  'TypeError: modalSaveHandler is not a function at onSaveHandler (Modal.js:17)'
     const onSaveHandler = () => {
       modalSaveHandler(id, editText);
     }
     
-    console.log(id); //this gives undefined only 
+    console.log('content of clicked task is: '+modalContent);
+    console.log('id of clicked task is: '+id); //this gives undefined only 
      
     
     if(!showStatus) return null;
