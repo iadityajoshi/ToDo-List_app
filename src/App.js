@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import ToDoList from "./Components/ToDoList";
 import Header from "./Components/Header";
 
+
 function App() {
   const [list, setList] = useState([]);
   const dataHandler = (input) => {
@@ -16,6 +17,11 @@ function App() {
     setList(list.filter((item) => item.id !== input));
   };
 
+  const modalSaveHandler = (inputID, inputTitle) => {
+    const idx = list.findIndex( item => item.id===inputID);
+    return list.splice(idx, 1, {title: inputTitle, id:inputID});
+  };
+
   return (
     <div className="app">
       <div>
@@ -23,7 +29,8 @@ function App() {
       </div>
       <TextForm query={dataHandler} />
       <div className="container">
-        <ToDoList clickHandler={deleteHandler} data={list} />
+        {/* passing the state as props  */}
+        <ToDoList clickHandler={deleteHandler} data={list} modalSavehandler={modalSaveHandler} />
       </div>
     </div>
   );

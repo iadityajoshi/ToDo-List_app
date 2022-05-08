@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const TextForm = (props) => {
   const [text, setText] = useState("");
-  const buttonHandler = (event) => props.query( text);
+  const buttonHandler = () => props.query( text);
 
   return (
     <div>
