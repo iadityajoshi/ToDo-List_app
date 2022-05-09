@@ -18,7 +18,7 @@ const Modal = ({modalContent, showStatus, modalClose, id, modalSaveHandler}) => 
     }
     
     console.log('content of clicked task is: '+modalContent);
-    console.log('id of clicked task is: '+id); //this gives undefined only 
+    console.log('id of clicked task is: '+id);
      
     
     if(!showStatus) return null;
