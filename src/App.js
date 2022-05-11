@@ -1,3 +1,4 @@
+'use strict'
 import React, { useState } from "react";
 import "./App.css";
 import TextForm from "./Components/TextForm";
@@ -9,10 +10,9 @@ import Header from "./Components/Header";
 function App() {
   const [list, setList] = useState([]);
   const dataHandler = (input) => {
-    // console.log(list);
-    // console.log(input);
     setList([...list, { title: input, id: uuidv4() }]);
   };
+
   const deleteHandler = (input) => {
     setList(list.filter((item) => item.id !== input));
   };
@@ -22,7 +22,7 @@ function App() {
     const idx = list.findIndex( item => item.id===inputID);
 
     //using splice method to reach upto that index(idx),delete that element and replace it with edited text
-    return list.splice(idx, 1, {title: inputTitle, id:inputID});
+     list.splice(idx, 1, {title: inputTitle, id:inputID});
   };
 
   return (
@@ -33,7 +33,7 @@ function App() {
       <TextForm query={dataHandler} />
       <div className="container">
         {/* passing the state as props  */}
-        <ToDoList clickHandler={deleteHandler} data={list} modalSavehandler={modalSaveHandler} />
+        <ToDoList clickHandler={deleteHandler} data={list} modalSaveHandler={modalSaveHandler} />
       </div>
     </div>
   );

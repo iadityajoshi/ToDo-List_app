@@ -25,6 +25,7 @@
     border-radius: 8px;
     font-size: 20px;
     margin-bottom: 10px;
+    padding-left: 8px;
 }
 
 /* .modal-content{
@@ -40,5 +41,5 @@
 .btn-close{
     align-self: flex-start;
     position: relative;
-    left: 2%;
+    left: -5%;
 }

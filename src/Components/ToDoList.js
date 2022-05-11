@@ -9,27 +9,23 @@ const ToDoList = ( {data, clickHandler, modalSaveHandler} ) => {
   const [showModal,setShowModal] = useState(false);
   const [currEditID, setCurrEditID] = useState();
   const [content, setContent] = useState();
-  // console.log(data);
+
   const deleteList = (input) => {
-      // console.log(input);
       clickHandler(input);
   }
   
   const editHandler = (id, title) => {
-      console.log('before setting edit titel: '+content);
       setShowModal(true);
       setCurrEditID(id);
       setContent(title);    
   }
-  console.log('edit task is: '+ content);
-  console.log('id of edit task is: '+ currEditID);
 
   const modalClose = () => {
       setShowModal(false);
   }
-  // console.log('to do list component called'); //to check why after clicking edit modal window not opening
+ 
+  // console.log(content);
   return (
-    
     <div>
        {data.map((item) => (
         <li key={item.id} className='list'>{item.title}
@@ -45,6 +41,7 @@ const ToDoList = ( {data, clickHandler, modalSaveHandler} ) => {
                 modalContent={content} 
                 modalClose={modalClose} 
                 modalSaveHandler={modalSaveHandler}  
+                setModalContent = {setContent}
         />
     </div>
   )
