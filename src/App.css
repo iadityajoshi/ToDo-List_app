@@ -76,3 +76,7 @@ li {
 .button-container{
    flex: 1;
 }
+
+.list-title {
+  min-width: 200px;
+}
