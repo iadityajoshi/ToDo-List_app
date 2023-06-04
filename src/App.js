@@ -1,5 +1,5 @@
 'use strict'
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import TextForm from "./Components/TextForm";
 import { v4 as uuidv4 } from "uuid";
@@ -8,7 +8,16 @@ import Header from "./Components/Header";
 
 
 function App() {
-  const [list, setList] = useState([]);
+  //lazy initialization of state value
+  const [list, setList] = useState(() => {
+    const savedList = localStorage.getItem("todoList");
+    return savedList ? JSON.parse(savedList) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(list));
+  }, [list]);
+
   const dataHandler = (input) => {
     setList([...list, { title: input, id: uuidv4() }]);
   };
