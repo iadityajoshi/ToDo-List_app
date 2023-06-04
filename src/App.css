@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,20 +12,20 @@ body{
   background-color: rgb(255, 212, 148);
 }
 
-.app{
+.app {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   border: 2px solid rgb(17, 12, 29);
   border-radius: 10px;
-  height: 500px;
+  min-height: 500px;
+  height: auto;
   width: 400px;
   background-color: rgb(21, 65, 71);
   color: white;
 }
 
-.inputForm{
+.inputForm {
   height: 40px;
   width: 230px;
   border-radius: 8px;
@@ -34,7 +34,7 @@ body{
   font-size: 16px;
 }
 
-button{
+button {
   height: 40px;
   width: 60px;
   margin-left: 10px;
@@ -42,32 +42,37 @@ button{
   background-color: rgb(255, 202, 123);
 }
 
-.container{
+.container {
   align-self: flex-start;
   margin-left: 60px;
   margin-top: 10px;
 }
 
-h1{
+h1 {
   margin-top: 15px;
-  font-family: 'Beau Rivage', cursive; 
+  font-family: "Beau Rivage", cursive;
 }
 
-li{
+li {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
-  border: 2px solid white;
-  padding: 8px;
-  border-radius: 10px;
   width: 280px;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 8px;
   text-align: start;
+  align-items: center;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
-.listButtons{
+.listButtons {
   /* margin-left: 100px; */
   width: 50px;
   height: 25px;
 }
 
-
+.button-container{
+   flex: 1;
+}
